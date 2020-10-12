@@ -1,0 +1,33 @@
+
+
+Go to "src" directory and run following scripts
+
+
+
+
+1. Set up bootstrap server and open up nodes in different ports. BS will run on port 55555 and nodes will be running 57000-57011
+use command  ./configuration.sh
+
+Steps >> BS will be running on port 55555 and all other nodes will be registering there.
+         Initially node 2 connects to node 1, Node 3 connects to Node 1 and 2, Node 4 connects to Node 1, Node 2 and Node 3.
+	 Other nodes will connected to random 2 nodes.
+         So first nodes might connected to more nodes.
+
+2. To search file in nodes use follwoing command. When searching change appropirately.
+
+bash ./search_files.sh
+
+Steps >> when a file is searching in a node, if that node contain the file it will send SEROK to BS
+	 If it does not contain the file it will forward the search message to all connected nodes until hips remaining.
+
+3. To remove nodes use the following command
+
+bash ./remove_nodes.sh
+
+Steps>> Unregister from the BS
+        Inform to the connected nodes
+
+
+
+
+
